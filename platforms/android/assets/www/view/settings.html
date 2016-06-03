@@ -1,0 +1,29 @@
+<ion-view view-title="" class="backgroundImage">
+
+    <ion-header-bar class="bar bar-header bar-clear">
+    	<div class="buttons">
+			<button ng-click="goBack();" class="button button-icon ion-ios-arrow-left"></button>
+		</div>
+  		<h1 class="title">Şehirler</h1>
+  		<div class="buttons">
+	  		<button ng-click="changeEffaceable();" ng-if="city.addedCities.length > 1" class="deleteCityButton button button-icon ion-ios-minus-outline"></button>
+	  		<button ng-click="openAddCityModal();" ng-disabled="city.addedCities.length >= 4" class="button button-icon ion-ios-plus-outline"></button>
+  		</div>
+	</ion-header-bar>
+
+	<ion-content id="settingsView" class="has-header">
+
+		<div class="spacer"></div>
+
+		
+		<div ng-repeat="item in city.addedCities" class="cityListItem" ng-click="deleteCity($index)">
+			
+			<span class="cityListName">{{item.areaName}}</span>
+			<span class="cityListTemperature">{{item.nowTemperature}}°</span>
+			<i class="deleteCityIcon icon ion-ios-minus-empty" ng-show="effaceable && $index != 0"></i>
+			<hr>
+
+		</div>
+
+	</ion-content>
+</ion-view>

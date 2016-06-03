@@ -1,0 +1,37 @@
+<ion-view view-title="" class="backgroundImage">
+
+	<ion-content id="mainView">
+
+		<button ui-sref="settings" class="settingsButton button button-icon ion-ios-settings"></button>
+		
+		<div class="spacer"></div>
+
+		
+		<div class="container" ng-repeat="item in cityWeatherList" ng-click="getHourlyWeather(item.areaName, item.latitude, item.longitude)">
+			
+			<center>
+				
+				<div class="cityName">{{item.areaName}}</div>
+				<div class="weatherDescription">{{item.weatherDescription}}</div>
+				<div class="temperature">{{item.nowTemperature}}°</div>
+
+			</center>
+			
+			<div class="spacer"></div>
+
+			<div ng-repeat="weather in item.weather">
+				<span class="today">{{weather.date | dateToDayName}}</span>
+				<div class="todayTemperature">
+					<span class="maxTemperature">{{weather.maxtempC}}</span>
+					<span class="minTemperature">{{weather.mintempC}}</span>
+				</div>
+
+				<hr>
+			</div>
+			
+			<div class="spacer"></div>
+
+		</div>
+
+	</ion-content>
+</ion-view>

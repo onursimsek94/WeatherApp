@@ -1,0 +1,120 @@
+/* Common Styles Begin */
+.backgroundImage {
+	background: url("../img/bgImage.png");
+    color: white;
+}
+
+.spacer {
+	height: 60px;
+}
+
+hr {
+	border-style: 1px solid white;
+	opacity: 0.7;
+}
+/* Common Styles End */
+
+/* Main Styles Begin */
+.settingsButton {
+	float: right;
+	margin-top: 10px;
+	font-size: 30px;
+	color: white;
+}
+
+.cityName {
+	font-size: 35px;
+}
+
+.weatherDescription {
+	margin-top: 5px;
+	font-size: 15px;
+}
+
+.temperature {
+	margin-top: 40px;
+	font-size: 100px;
+}
+
+.today {
+	margin-left: 15px;
+	font-weight: bold;
+}
+
+.todayTemperature {
+    float: right;
+    margin-right: 15px;
+}
+
+.maxTemperature {
+	color: white;
+}
+
+.minTemperature {
+	color: white;
+	opacity: 0.5;
+	padding-left: 10px;
+}
+/* Main Styles End */
+
+/* hourlyWeatherModal Styles Begin */
+.hourlyWeatherList {
+	background: none;
+}
+
+.hourlyWeatherList h2 {
+	color: white;
+}
+
+.hourlyWeatherList p {
+	color: white;
+	opacity: 0.5;
+}
+/* hourlyWeatherModal Styles End */
+
+/* Settings Styles Begin */
+.cityListItem {
+	margin-bottom: 40px;
+}
+
+.cityListName {
+	margin-left: 15px;
+	font-size: 35px;
+}
+
+.cityListTemperature {
+	float: right;
+	margin-top: -12px;
+    margin-right: 15px;
+    font-size: 70px;
+    font-weight: lighter;
+}
+
+.deleteCityIcon {
+	float: left;
+	margin-top: -10px;
+	margin-left: 5px;
+	font-size: 40px;
+	font-weight: bold;
+	color: red;
+}
+
+.deleteCityButton {
+	float: right;
+}
+/* Settings Styles End */
+
+/* addCityModal Styles Begin */
+.matchedCities {
+	background: none;
+	color: white;
+}
+
+.bar-subheader {
+	background: none;
+}
+
+.bar-subheader .button-clear {
+	color: white;
+}
+/* addCityModal Styles End 

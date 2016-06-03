@@ -1,0 +1,35 @@
+<ion-modal-view class="backgroundImage">
+
+    <div class="bar bar-header bar-clear">
+        <button ng-click="closeAddCityModal();" class="button button-clear">Kapat</button>
+        <h1 class="title">Şehir Ekle</h1>
+    </div>
+
+    <div class="bar bar-subheader bar-secondary-nav item-input-inset">
+          <label class="item-input-wrapper">
+                <i class="icon ion-ios-search placeholder-icon"></i>
+                <input type="search" placeholder="Şehir ara" ng-model="city.name" ng-model-options="{ debounce: 500 }">
+          </label>
+          <button class="button button-clear" ng-click="clearSearchDatas();">
+                Temizle
+          </button>
+    </div>
+
+    <ion-content id="addCityModal" class="has-header has-subheader">
+
+        <ion-list>
+
+            <ion-item collection-repeat="item in city.matchedCities" class="matchedCities item-icon-left" ng-click="addCity(item);">
+                <i class="icon ion-ios-plus-empty"></i>
+                {{item.areaName}}, {{item.region}}, {{item.country}}
+            </ion-item>
+
+            <div class="text-center" ng-if="notFound && city.name.length >= 3">Sonuç bulunamadı!</div>
+            <div class="text-center" ng-if="city.name.length < 3 && city.matchedCities.length == 0">Arama yapmak için en az 3 karakter girin</div>
+
+        </ion-list>
+
+    </ion-content>
+
+
+</ion-modal-view>

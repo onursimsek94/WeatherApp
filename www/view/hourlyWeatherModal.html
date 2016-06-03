@@ -1,0 +1,23 @@
+<ion-modal-view class="backgroundImage">
+
+    <div class="bar bar-header bar-clear">
+        <button ng-click="closeHourlyWeatherModal();" class="button button-clear">Kapat</button>
+        <h1 class="title">{{hourlyWeatherData.areaName}}</h1>
+    </div>
+
+    <ion-content id="hourlyWeatherModal" class="has-header">
+
+        <ion-list>
+
+            <ion-item collection-repeat="item in hourlyWeatherData.weather[0].hourly" class="hourlyWeatherList item-avatar">
+                <img ng-src="{{item.weatherIconUrl[0].value}}">
+                <h2>{{item.time | hourFormat}} - {{item.tempC}}°</h2>
+                <p>{{item.lang_tr[0].value}}</p>
+            </ion-item>
+
+        </ion-list>
+
+    </ion-content>
+
+
+</ion-modal-view>
