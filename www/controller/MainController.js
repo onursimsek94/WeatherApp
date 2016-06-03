@@ -1,5 +1,33 @@
 'use strict';
 
+/*
+
+	$scope.cityWeatherList
+		--> Eklenen sehirlerin listesini tutar
+
+	$scope.hourlyWeatherData
+		--> Ana ekranda secilen sehrin bilgisini tutar
+
+	$cordovaGeolocation.getCurrentPosition
+		--> Uygulama ilk calistiginda bulunan konumun enlem ve boylamini alir.
+		-->	WeatherService.SearchCity'ye alinan enlem boylami gonderir,
+			sonuc $scope.handlerCityData'ya duser.
+
+	$scope.handlerCityData
+		--> Donen sonucun ilk verisi CommonService.addCity'ye gonderilerek
+			listeye ekleniyor.
+	
+	$scope.getHourlyWeather
+		--> Ana ekranda secilen sehrin enlem ve boylam degerlerini 
+			WeatherService.GetCityWeather'a gonderir,
+			sonuc $scope.handlerHourlyWeatherData'ya duser.
+
+	$scope.handlerHourlyWeatherData
+		--> hourlyWeatherModal'i acar ve saatlik hava durumu bilgisini 
+			$scope.hourlyWeatherData'ya atar.
+
+*/
+
 WeatherApp.controller('MainController', function(WeatherService, CommonService, $scope, $cordovaGeolocation, $ionicLoading, $ionicModal, $ionicScrollDelegate) {
 
 	$scope.cityWeatherList = CommonService.getCityList();

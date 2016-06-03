@@ -1,5 +1,16 @@
 'use strict';
 
+/*
+
+    GLOBALS
+        --> API icin gerekli bilgiler tutuluyor.
+
+    document.addEventListener("offline"
+        --> Uygulama ilk acildiginda internet kontrolu yapar. Internet yoksa
+            kullaniciya uyari vererek programi kapatir. (Android)
+
+*/
+
 var GLOBALS = {
     worldWeatherOnlineProperties: {
         apiKey: 'a214d05a5c804f258f5185835163105',
@@ -14,7 +25,7 @@ var GLOBALS = {
 
 var WeatherApp = angular.module('WeatherApp', ['ionic', 'ngCordova', 'ui.router'])
 
-.run(function(CommonService, $ionicPlatform, $rootScope, $ionicPopup) {
+.run(function($ionicPlatform, $ionicPopup) {
     $ionicPlatform.ready(function() {
         if (window.cordova && window.cordova.plugins.Keyboard) {
             cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);

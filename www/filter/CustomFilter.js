@@ -1,5 +1,17 @@
 'use strict';
 
+/*
+
+	dateToDayName
+		--> Gelen string'ten date nesnesi olusturulur, tarihin haftadaki index'i
+			alinir ve daysOfWeek'te karsilik gelen deger dondurulur.
+
+	hourFormat
+		--> Saatlik hava durumu gostermedeki api'dan donen saatleri uygun formata
+			donusturmek icin kullaniliyor.
+
+*/
+
 WeatherApp.filter('dateToDayName', function() {
 	return function(date) {
 		var daysOfWeek = new Array('Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi');

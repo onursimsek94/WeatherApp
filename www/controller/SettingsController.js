@@ -1,5 +1,52 @@
 'use strict';
 
+/*
+
+	$scope.city
+		--> Aranilan sehri, daha onceden eklenmis olan sehirleri ve 
+			arama sonucunda donen sehirleri tutar.
+
+	$scope.effaceable
+		--> Sehir silme ikonunu ve butonunu gosterip gizlemek icin kullaniliyor.
+			Butonun gozukmesi icin listede en az 2 sehir olmali
+
+	$scope.notFound
+		--> Kullanici bilgilendirmesi icin kullaniliyor. Arama sonucunda sehir
+			donmezse view'da Sonuc Bulunamadi yazisini gosteriyor.
+
+	$scope.changeEffaceable
+		--> $scope.effaceable degerini degistirir.
+
+	$scope.deleteCity
+		--> Sehir silmek icin kullaniliyor. CommonService.deleteCity'ye secilen
+			sehrin indexi gonderiliyor. Silme isleminin gerceklesebilmesi icin
+			$scope.effaceable true olmali ve index 0 olmamalidir. Bulunulan 
+			konum silinemez.
+
+	$scope.$watch('city.name'
+		--> Sehir arama yapmak icin kullanilir. Arama icin en az 3 karakter olmalidir.
+			WeatherService.SearchCity'ye yazilan deger gonderilir. Sonuc
+			$scope.handlerCitiesData'ya duser.
+
+	$scope.handlerCitiesData
+		--> Sonuc -1 donmemisse sehir bulunmus demektir ve sonuclar listelenir.
+			Sonuc -1 donmusse sehir bulunamamis demektir ve kullanici bilgilendirilir.
+
+	$scope.clearSearchDatas
+		--> Sehir arama field'inin ve bulunan sehirlerin temizlenmesi icin kullanilir.
+
+	$scope.addCity
+		--> Sehir eklemek icin kullanilir. Listelenen sehirlerden biri secildiginde
+			tetiklenir. Secilen sehir CommonService.addCity'ye gonderilir. Sehrin
+			hava durumunu almak icin enlem ve boylami WeatherService.GetCityWeather'a
+			gonderir, sonucu $scope.handlerTemperatureData'ya duser.
+
+	$scope.handlerTemperatureData
+		--> CommonService.setCityTemperature'a donen hava durumu bilgilerini gonderir
+			ve modal'i kapatir.			
+
+*/
+
 WeatherApp.controller('SettingsController', function(WeatherService, CommonService, $scope, $state, $ionicModal, $ionicLoading) {
 
 	$scope.city = {
